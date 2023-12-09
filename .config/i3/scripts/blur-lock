@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+PICTURE=/tmp/i3lock.png
+SCREENSHOT="scrot -z $PICTURE"
+
+BLUR="12x12"
+
+$SCREENSHOT
+convert $PICTURE -blur $BLUR $PICTURE
+/home/barakorx/gits/i3lock/build/i3lock -i $PICTURE --show-keyboard-layout --ignore-empty-password 
+rm $PICTURE
